@@ -1,7 +1,6 @@
 package com.provider;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 import org.apache.servicecomb.service.center.client.ServiceCenterClient;
@@ -10,13 +9,12 @@ import org.apache.servicecomb.service.center.client.model.Microservice;
 import org.apache.servicecomb.service.center.client.model.MicroserviceInstance;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
-public class helloServer {
+public class HelloServer {
 
   public static void main(String[] args){
-    SpringApplication.run(helloServer.class,args);
+    SpringApplication.run(HelloServer.class,args);
     registerMicroservice();
   }
 
@@ -27,7 +25,7 @@ public class helloServer {
     Microservice microservice = new Microservice();
     //set serviceId, serviceName and register service
     microservice.setServiceId("1111");
-    microservice.setServiceName("helloServer");
+    microservice.setServiceName("HelloServer");
     sc.registerMicroservice(microservice);
 
     //register service instance
